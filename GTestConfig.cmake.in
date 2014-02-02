@@ -1,0 +1,22 @@
+# - Config file for the GTest package
+# It defines the following variables
+#  GTEST_INCLUDE_DIRS   - include directories for gtest. 
+#  GTEST_LIBRARIES      - gtest libraries to link against w/o gtest_main.
+#  GTEST_MAIN_LIBRARIES - gtest_main libraries to link against (gtest linked transitively).
+#  GTEST_CXX_FLAGS      - flags to compile your own units with. 
+
+# Export the flags used to compile gtest and gtest_main
+set(GTEST_CXX_FLAGS "@CONF_CXX_FLAGS@")
+ 
+# Compute paths
+get_filename_component(GTEST_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(GTEST_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+ 
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET gtest AND NOT TARGET gtest_main AND NOT GTest_BINARY_DIR)
+  include("${GTEST_CMAKE_DIR}/GTestTargets.cmake")
+endif()
+ 
+# These are IMPORTED targets created by GTestTargets.cmake
+set(GTEST_LIBRARIES gtest)
+set(GTEST_MAIN_LIBRARIES gtest_main)

@@ -1,0 +1,9 @@
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+GTestConfig.cmake
+GTestConfigVersion.cmake
+libgtest.a
+libgtest_main.a
+GTestTargets.cmake
