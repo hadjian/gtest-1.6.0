@@ -7,3 +7,4 @@ GTestConfigVersion.cmake
 libgtest.a
 libgtest_main.a
 GTestTargets.cmake
+flags_target.cc

@@ -114,7 +114,9 @@ install(TARGETS gtest_main gtest
 # 
 
 # Store compile flags into variable.
-set(CONF_CXX_FLAGS ${cxx_default})
+file(WRITE flags_target.cc ${CMAKE_CURRENT_LIST_DIR} "//Fake source file to query compile flags in cmake")
+cxx_executable(flags_target ${CMAKE_CURRENT_LIST_DIR} gtest_main)
+get_property(CONF_CXX_FLAGS TARGET flags_target PROPERTY COMPILE_FLAGS)
 
 # Add all targets to the build-tree export set
 export(TARGETS gtest_main gtest 
