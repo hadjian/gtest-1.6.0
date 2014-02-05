@@ -8,3 +8,4 @@ libgtest.a
 libgtest_main.a
 GTestTargets.cmake
 flags_target.cc
+flags_target
