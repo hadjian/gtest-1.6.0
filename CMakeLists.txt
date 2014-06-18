@@ -75,6 +75,8 @@ endif()
 # Define helper functions and macros used by Google Test.
 include(cmake/internal_utils.cmake)
 
+config_compiler_and_linker() # Defined in internal_utils.cmake.
+
 add_definitions( -DGTEST_USE_OWN_TR1_TUPLE=1 )
 
 # Where Google Test's .h files can be found.
